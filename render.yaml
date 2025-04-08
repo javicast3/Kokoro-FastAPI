@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: kokoro-tts
+    env: docker
+    plan: starter
+    autoDeploy: false
+    region: oregon
+    dockerfilePath: docker/cpu/Dockerfile # Si no usás GPU
+    buildCommand: docker compose -f docker/cpu/docker-compose.yml build
+    startCommand: docker compose -f docker/cpu/docker-compose.yml up
+    healthCheckPath: /docs
+    envVars:
+      - key: PORT
+        value: 8880
