@@ -59,4 +59,5 @@ RUN if [ "$DOWNLOAD_MODEL" = "true" ]; then \
 
 ENV DEVICE="cpu"
 # Run FastAPI server through entrypoint.sh
+EXPOSE 8880
 CMD ["./entrypoint.sh"]

@@ -5,9 +5,7 @@ services:
     plan: starter
     autoDeploy: false
     region: oregon
-    dockerfilePath: docker/cpu/Dockerfile # Si no usás GPU
-    buildCommand: docker compose -f docker/cpu/docker-compose.yml build
-    startCommand: docker compose -f docker/cpu/docker-compose.yml up
+    dockerfilePath: docker/cpu/Dockerfile
     healthCheckPath: /docs
     envVars:
       - key: PORT
